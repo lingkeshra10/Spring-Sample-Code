@@ -57,3 +57,27 @@ A Binary Search Tree (BST) is a type of binary tree where each node stores a key
 - Both the left and right subtrees must themselves be binary search trees.
 
 This structure ensures that operations like search, insertion, and deletion can be performed in O(log n) time on average, making BSTs highly efficient for sorted data retrieval.
+
+13. What are multidimensional arrays?
+Multidimensional arrays use multiple indexes to store data, making them useful for representing data that cannot be effectively stored using single-dimensional arrays, such as the layout of a board game or tables with multiple columns of data.
+
+14. Are linked lists considered linear or non-linear data structures?
+This depends on the context of their use. Based on storage, linked lists are considered non-linear, as their elements are not stored in contiguous memory. However, when considering access strategies, linked lists are considered linear because they are traversed sequentially.
+
+15. How does dynamic memory allocation help in managing data?
+Apart from being able to store simple structures data types, dynamic memory allocation can combine separately allocated structured blocks to form composite structure that expand and contract as needed.
+
+16. What is FIFO?
+FIFO stands for First-In, First-Out, and it describes how data is accessed in a queue. The data that has been in the queue the longest is the first to be removed.
+
+17. What is an ordered list?
+An ordered list is a list in which the position of each node is determined by the value of its key component, ensuring that the key values form an increasing sequence as the list is traversed.
+
+18. What is merge sort?
+Merge sort is a divide-and-conquer algorithm used for sorting data. Adjacent elements are merged and sorted into larger sorted lists. This process continues, with increasingly larger lists being merged and sorted, until one fully sorted list remains.
+
+19. Differentiate NULL and VOID
+NULL represents a value, while VOID is a data type. A variable with a NULL value indicates that it is empty or uninitialized. VOID, on the other hand, is used to indicate that a function or pointer does not return or hold any data.
+
+20. What is the primary advantage of a linked list?
+The primary advantage of a linked list is its flexibility in modification. Linked lists can be easily edited regardless of the number of elements, making them ideal for situations where frequent insertion or deletion of data is required
