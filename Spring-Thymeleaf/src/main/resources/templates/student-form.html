@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Registration Form</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    form {
+        max-width: 400px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    input[type="text"], select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    .error {
+        color: red;
+        font-size: 0.9em;
+    }
+    .radio-group, .checkbox-group {
+        margin-top: 15px;
+    }
+    .radio-group fieldset, .checkbox-group fieldset {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+    }
+    .radio-group legend, .checkbox-group legend {
+        font-weight: bold;
+    }
+    .radio-option, .checkbox-option {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+    .radio-option input, .checkbox-option input {
+        margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+<h3>Student Registration Form</h3>
+<form th:action="@{/processStudentForm}" th:object="${student}" method="POST">
+
+  <label for="firstName">First Name:</label>
+  <input type="text" id="firstName" th:field="*{firstName}" placeholder="Enter your first name"/>
+  <div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="error"></div>
+
+  <label for="lastName">Last Name:</label>
+  <input type="text" id="lastName" th:field="*{lastName}" placeholder="Enter your last name"/>
+  <div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error"></div>
+
+  <label for="country">Country:</label>
+  <select id="country" th:field="*{country}">
+    <option value="" disabled selected>Select your country</option>
+    <option th:each="tempCountry : ${countries}" th:value="${tempCountry}" th:text="${tempCountry}"/>
+  </select>
+  <div th:if="${#fields.hasErrors('country')}" th:errors="*{country}" class="error"></div>
+
+  <div class="radio-group">
+    <fieldset>
+      <legend>Favourite Programming Language:</legend>
+      <div class="radio-option" th:each="language : ${programmingLanguages}">
+        <input type="radio" th:field="*{programmingLang}" th:value="${language}" />
+        <label th:text="${language}"></label>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="checkbox-group">
+    <fieldset>
+      <legend>Favourite Operating Systems:</legend>
+      <div class="checkbox-option" th:each="osOption : ${favouriteOSOptions}">
+        <input type="checkbox" th:field="*{favouriteOS}" th:value="${osOption}" />
+        <label th:text="${osOption}"></label>
+      </div>
+    </fieldset>
+  </div>
+
+  <br/>
+  <input type="submit" value="Submit"/>
+</form>
+</body>
+</html>

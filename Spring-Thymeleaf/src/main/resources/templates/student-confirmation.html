@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Confirmation Form</title>
+    <!-- Enhanced styling for better appearance -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .confirmation-container {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+        }
+        h3 {
+            margin-top: 0;
+            color: #4CAF50;
+        }
+        .confirmation {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .confirmation p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        .confirmation ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .confirmation ul li {
+            background-color: #e8f5e9;
+            padding: 8px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="confirmation-container">
+    <h3>Student Confirmation</h3>
+    <div class="confirmation">
+        <p><strong>Name:</strong> <span th:text="${student.firstName + ' ' + student.lastName}"></span></p>
+        <p><strong>Country:</strong> <span th:text="${student.country}"></span></p>
+        <p><strong>Favourite Programming Language:</strong> <span th:text="${programmingLanguageName}"></span></p>
+        <p><strong>Favourite Operating Systems:</strong></p>
+        <ul>
+            <li th:each="tempSystem : ${student.favouriteOS}" th:text="${tempSystem}"></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
