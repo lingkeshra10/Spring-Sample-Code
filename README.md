@@ -9,7 +9,8 @@ This contains Spring Sample Code. In the sample Code contains all the related an
 The Critical Role of Password Security
 In today’s digital landscape, passwords are your frontline defense, protecting sensitive data and personal information. But not all password protection methods are created equal, and weak security can lead to catastrophic breaches—think of the Sony hacks in 2011.
 
-Why Common Password Solutions Fall Short
+### Why Common Password Solutions Fall Short
+
 Many password security approaches fall short of offering true protection. Let's examine a few popular methods and their limitations.
 
 1. Plain Text Passwords
